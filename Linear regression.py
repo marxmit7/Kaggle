@@ -3,9 +3,9 @@ from numpy import *
 
 def compute_error_for_giver_error(b,m,points):
     totalError=0
-    for in range(0,len(points)):
+    for i in range(0,len(points)):
         x=points[i,0]
-        y=points[0,1]
+        y=points[i,1]
         totalError += (y-(m*x+b))**2
     return totolError / float(len(points))
 
@@ -44,6 +44,6 @@ def run():
     print(m)
 
 
-if __name__=='__main__'
+if __name__=='__main__':
     run()
     
