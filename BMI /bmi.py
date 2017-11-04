@@ -27,9 +27,8 @@ def step_gradient (b_current,m_current,points,learning_rate,iteration):
         b_gradient+= -(2/N)*1*(y-(x*m_current +b_current))
         m_gradient+= -(2/N)*x*(y-(x*m_current +b_current))
     new_b=b_current-(learning_rate*b_gradient)
-
     new_m=m_current-(learning_rate*m_gradient)
-    print "\n After {0} iterations the new b  is {1}  & new m  is {2}\n ".format(iteration+1,new_b,new_m)
+    print "\n iterations= {0} ,new b = {1},new m= {2}\n ".format(iteration+1,new_b,new_m)
     # print "   After {0} iterations the  is {1}".format(iteration+1,)
     return [new_b,new_m]
 
@@ -48,13 +47,13 @@ def amitrix():
     learning_rate=0.001
     initial_b=1
     initial_m=1
-    num_iterations=100
+    num_iterations=1000
     computeError(initial_b,initial_m,points)
 
     [b,m]=gradien_descent_runner(points,initial_b,initial_m,learning_rate,num_iterations)
 
     print "\n Enter BMI to get Blood Sugar\n"
-    X_test=27.2
+    X_test=18.2
     print "\n Test/Sample BMI is: {0}\n".format(X_test)
     y_test = m * X_test + b
     print "\n Blood Sugar is {0} \n".format(y_test)
